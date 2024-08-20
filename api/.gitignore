@@ -1,0 +1,53 @@
+# Ignore build outputs
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Scaffolding
+.scaffolding/
+
+# Visual Studio Code settings
+.vscode/
+
+# Rider settings
+.idea/
+
+# Log files
+*.log
+
+# Auto-generated files
+Generated/
+Generated_Code/
+
+# Paket dependency manager
+.paket/
+paket-files/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Microsoft Azure Web App publish settings. 
+# This includes sensitive information like passwords.
+*.PublishSettings
+
+# IIS generated files
+**/[Dd]ebug/
+**/[Rr]elease/
+**/[Xx]64/
+**/[Aa]nyCPU/
+**/[Aa]rm/
+**/wwwroot/
+**/appsettings*.json
