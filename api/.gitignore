@@ -1,6 +1,7 @@
-# Ignore build outputs
+# Build Folders / Files
 bin/
 obj/
+out/
 
 # User-specific files
 *.rsuser
@@ -8,26 +9,10 @@ obj/
 *.user
 *.userosscache
 *.sln.docstates
-
-# ASP.NET Scaffolding
-.scaffolding/
-
-# Visual Studio Code settings
 .vscode/
 
-# Rider settings
-.idea/
-
-# Log files
-*.log
-
-# Auto-generated files
-Generated/
-Generated_Code/
-
-# Paket dependency manager
-.paket/
-paket-files/
+# Mono Auto Generated Files
+mono_crash.*
 
 # Windows image file caches
 Thumbs.db
@@ -39,15 +24,102 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Microsoft Azure Web App publish settings. 
-# This includes sensitive information like passwords.
-*.PublishSettings
+# Project-specific ignore
+**/Properties/launchSettings.json
 
-# IIS generated files
-**/[Dd]ebug/
-**/[Rr]elease/
-**/[Xx]64/
-**/[Aa]nyCPU/
-**/[Aa]rm/
-**/wwwroot/
-**/appsettings*.json
+# DotNet Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# .NET Core generated files
+*.generated.cs
+*.generated.sql
+*.generated.ts
+
+# Uncomment if you have a global .NET Core SDK location
+# If you use global.json to pin the .NET Core SDK version
+# .dotnet_tools/
+
+# NuGet
+*.nupkg
+# NuGet Symbol Packages
+*.snupkg
+.nuget/
+packages/
+# The packages folder can be ignored because of automatic restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated if needed
+# project.assets.json
+# project.nuget.cache
+# project.nuget.g.props
+# project.nuget.g.targets
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows 8 directory cache file
+*.appdata*
+
+# Windows 10 cloud sync database files
+*.algolia
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Rider
+.idea/
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+
+# User-specific files
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+._.DS_Store
+# Thumbnails
+._Icon
+
+# Web-specific ignores #
+########################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*.local
+
+# Optional: Include lock files if you commit them
+# package-lock.json
+# yarn.lock
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt

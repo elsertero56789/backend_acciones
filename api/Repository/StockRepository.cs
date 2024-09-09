@@ -7,6 +7,7 @@ using api.Dtos.Stock;
 using api.Helpers;
 using api.Interfaces;
 using api.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace api.Repository
@@ -39,7 +40,7 @@ namespace api.Repository
             return stockModel;
         }
 
-        public async Task<List<Stock>> GetAllAsync(QueryObject query)
+        public async Task<List<Stock>> GetAllAsync([FromQuery] QueryObject query)
         {
             var stocks = _context.Stocks.Include(c => c.Comments).AsQueryable();
             if(!string.IsNullOrWhiteSpace(query.NombreCompania))
@@ -57,7 +58,9 @@ namespace api.Repository
                     stocks = query.IsDescending ? stocks.OrderByDescending(s => s.Symbol) : stocks.OrderBy(s => s.Symbol);
                 }
             }
-            return await stocks.ToListAsync();
+            var saltarnumero = (query.NumeroPaginac - 1) * query.TamañoPaginac;
+
+            return await stocks.Skip(saltarnumero).Take(query.TamañoPaginac).ToListAsync();
         }
 
         public async Task<Stock?> GetByIdAsync(int id)
